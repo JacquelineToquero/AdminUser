@@ -60,14 +60,19 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
-    {
-        $user = User::findOrFail($id);
-  
-        $user->update($request->all());
-  
-        return redirect()->route('user')->with('success', 'product updated successfully');
-    }
+    public function update(User $user, Request $request){
+        
+$data = $request ->validate([
+'name' => 'required|string',
+'email' => 'required|email',
+'email_verified_at' => 'nullable|date',
+'password' => 'nullable|string',
+
+]);
+$user ->update($data);
+return redirect(route('user.index'))->with('success', 'User Updated Successfully') ;
+
+}
   
     /**
      * Remove the specified resource from storage.

@@ -1,11 +1,11 @@
 @extends('layouts.app')
   
-@section('title', 'Home Product')
+@section('title', 'Home')
   
 @section('contents')
     <div class="d-flex align-items-center justify-content-between">
-        <h1 class="mb-0">List Product</h1>
-        <a href="{{ route('user.create') }}" class="btn btn-primary">Add Product</a>
+        <h1 class="mb-0">User List</h1>
+        <a href="{{ route('register') }}" class="btn btn-primary">Register a New User</a>
     </div>
     <hr />
     @if(Session::has('success'))
@@ -17,10 +17,10 @@
         <thead class="table-primary">
             <tr>
                 <th>#</th>
-                <th>Title</th>
-                <th>Price</th>
-                <th>Product Code</th>
-                <th>Description</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Verified at</th>
+                <th>Password</th>
                 <th>Action</th>
             </tr>
         </thead>

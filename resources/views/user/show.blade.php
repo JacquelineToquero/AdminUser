@@ -7,22 +7,22 @@
     <hr />
     <div class="row">
         <div class="col mb-3">
-            <label class="form-label">Title</label>
-            <input type="text" name="title" class="form-control" placeholder="Title" value="{{ $user->title }}" readonly>
+            <label class="form-label">Name</label>
+            <input type="text" name="name" class="form-control" placeholder="Name" value="{{ $user->name }}" readonly>
         </div>
         <div class="col mb-3">
-            <label class="form-label">Price</label>
-            <input type="text" name="price" class="form-control" placeholder="Price" value="{{ $user->price }}" readonly>
+            <label class="form-label">Email</label>
+            <input type="text" name="email" class="form-control" placeholder="Email" value="{{ $user->email }}" readonly>
         </div>
     </div>
     <div class="row">
         <div class="col mb-3">
-            <label class="form-label">product_code</label>
-            <input type="text" name="product_code" class="form-control" placeholder="Product Code" value="{{ $user->product_code }}" readonly>
+            <label class="form-label">Email_verified_at</label>
+            <input type="text" name="email_verfified_at" class="form-control" placeholder="" value="{{ $user->email_verified_at }}" readonly>
         </div>
         <div class="col mb-3">
-            <label class="form-label">Description</label>
-            <textarea class="form-control" name="description" placeholder="Descriptoin" readonly>{{ $user->description }}</textarea>
+            <label class="form-label">Password</label>
+            <textarea class="form-control" name="password" placeholder="Password" readonly>{{ $user->password }}</textarea>
         </div>
     </div>
     <div class="row">

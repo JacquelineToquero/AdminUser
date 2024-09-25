@@ -27,12 +27,8 @@
                 </div>
                 <div class="row mt-2">
                     <div class="col-md-6">
-                        <label class="labels">Phone</label>
-                        <input type="text" name="phone" class="form-control" placeholder="Phone Number" value="{{ auth()->user()->phone }}">
-                    </div>
-                    <div class="col-md-6">
-                        <label class="labels">Address</label>
-                        <input type="text" name="address" class="form-control" value="{{ auth()->user()->address }}" placeholder="Address">
+                        <label class="labels">Password</label>
+                        <input type="text" name="password" class="form-control" placeholder="Password" value="{{ auth()->user()->password }}">
                     </div>
                 </div>
                  

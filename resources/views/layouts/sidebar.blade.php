@@ -19,7 +19,7 @@
    <!-- Nav Item - Products -->
    <li class="nav-item">
     <a class="nav-link" href="{{ route('user.index') }}">
-      <span>📦 Product</span>
+      <span>📦 Users</span>
     </a>
   </li>
     
