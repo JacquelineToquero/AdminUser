@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
+use App\Http\Middleware\Admin;
  
 Route::get('/', function () {
     return view('welcome');
@@ -23,7 +25,12 @@ Route::middleware('auth')->group(function () {
     Route::get('dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
- 
+    
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+    Route::get('/admin/dashboard', [AdminController::class, 'index'])
+    ->name('dashboard')
+    ->middleware(Admin::class); // Apply the middleware directly
    
  
     Route::get('/profile', [App\Http\Controllers\AuthController::class, 'profile'])->name('profile');
@@ -39,7 +46,5 @@ Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('user.des
 
 
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/home', [HomeController::class, 'index'])->name('home');
+
     
-});

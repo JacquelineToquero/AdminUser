@@ -56,10 +56,10 @@ class AuthController extends Controller
         $user = Auth::user();
 
         // Check user type and redirect accordingly
-        if ($user && $user->type === 'admin') {
-            return redirect()->route('user.index'); // Ensure this route exists
+        if ($user->usertype === 'admin') {  // Make sure 'type' corresponds to your DB field
+            return redirect()->route('dashboard'); // Change to your actual admin route
         } else {
-            return redirect()->route('home'); // Ensure this route exists
+            return redirect()->route('dashboard'); // Change to your actual user home route
         }
     }
 
@@ -68,6 +68,7 @@ class AuthController extends Controller
         'email' => trans('auth.failed'), // Ensure this translation exists
     ]);
 }
+
 
   
     public function logout(Request $request)
